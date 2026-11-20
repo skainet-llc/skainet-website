@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html .nojekyll about contact imprint privacy services \
-                assets wp-content wp-includes _site/
+                wp-content wp-includes _site/
 
       - uses: actions/configure-pages@v5
 

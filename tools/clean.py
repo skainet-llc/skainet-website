@@ -6,11 +6,13 @@ Run from the repo root after tools/mirror.sh. Idempotent.
 import filecmp
 import os
 import re
+import shutil
 import sys
 
 ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
 ORIGIN = "https://skainet.io"
-SKIP_DIRS = {".git", ".github", "tools", "assets"}
+CONTACT_MAIL = "hello@skainet.io"
+SKIP_DIRS = {".git", ".github", "tools"}
 
 
 def walk():
@@ -39,7 +41,19 @@ HEAD_JUNK = re.compile(
     r"<link[^>]+(?:application/rss\+xml|\+oembed|api\.w\.org|wp-json|EditURI|rel=['\"]shortlink['\"])[^>]*>\s*",
     re.I,
 )
-FORM_SNIPPET = '<script src="{prefix}assets/static-form.js" defer></script>\n'
+# The Contact Form 7 block, and the assets that only it needs.
+CF7_FORM = re.compile(r'<div class="wpcf7[^>]*>.*?</form>\s*</div>', re.S)
+CF7_TAGS = re.compile(
+    r"<link[^>]+id=['\"]contact-form-7-css['\"][^>]*>\s*"
+    r"|<script[^>]+id=['\"](?:swv-js|contact-form-7-js[\w-]*)['\"][^>]*>.*?</script>\s*"
+    r"|<script[^>]+static-form\.js[^>]*></script>\s*",
+    re.S,
+)
+CONTACT_HTML = (
+    'Write to us at <a href="mailto:{m}">{m}</a></p>'
+    '<p><a class="button button_size_2" href="mailto:{m}">'
+    '<span class="button_label">SEND US A MAIL</span></a>'
+).format(m=CONTACT_MAIL)
 
 for path in walk():
     if not path.endswith((".html", ".css")):
@@ -55,7 +69,6 @@ for path in walk():
     if path.endswith(".html"):
         rel_dir = os.path.relpath(os.path.dirname(path), ROOT)
         rel_dir = "" if rel_dir == "." else rel_dir.replace(os.sep, "/") + "/"
-        prefix = "../" * rel_dir.count("/")
 
         # 3. WordPress endpoints that do not exist on a static host
         text = HEAD_JUNK.sub("", text)
@@ -74,13 +87,14 @@ for path in walk():
 
         text = re.sub(r'\b(href|action)="((?:\.\./)*(?:[\w-]+/)*)index\.html(#[^"]*)?"', tidy, text)
 
-        # 6. contact form: no PHP backend, hand over to the visitor's mail client
-        if "wpcf7-form" in text and "static-form.js" not in text:
-            text = text.replace("</body>", FORM_SNIPPET.format(prefix=prefix) + "</body>", 1)
+        # 6. contact form: no backend on a static host, show a mail link instead
+        text = CF7_FORM.sub(CONTACT_HTML, text)
+        text = CF7_TAGS.sub("", text)
 
     if text != orig:
         with open(path, "w", encoding="utf-8", errors="surrogateescape") as fh:
             fh.write(text)
 
+shutil.rmtree(os.path.join(ROOT, "wp-content/plugins/contact-form-7"), ignore_errors=True)
 open(os.path.join(ROOT, ".nojekyll"), "a").close()
 print("cleaned", ROOT)
