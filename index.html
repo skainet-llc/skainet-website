@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>skAInet: customized embedded systems</title>
-<meta name="description" content="skAInet builds measurement electronics, data storage and analysis for condition monitoring: embedded C++, high-frequency measurement and diagnostics.">
+<title>skAInet: WITNESS, condition monitoring that stays in your plant</title>
+<meta name="description" content="skAInet is a startup building WITNESS: hardware and software that learn how a machine normally runs and report what deviates, inside the plant. We are looking for investors.">
 <meta name="theme-color" content="#262626">
 <link rel="canonical" href="https://skainet.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="skAInet">
-<meta property="og:title" content="skAInet: customized embedded systems">
-<meta property="og:description" content="skAInet builds measurement electronics, data storage and analysis for condition monitoring: embedded C++, high-frequency measurement and diagnostics.">
+<meta property="og:title" content="skAInet: WITNESS, condition monitoring that stays in your plant">
+<meta property="og:description" content="skAInet is a startup building WITNESS: hardware and software that learn how a machine normally runs and report what deviates, inside the plant. We are looking for investors.">
 <meta property="og:image" content="https://skainet.io/assets/img/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -33,6 +33,7 @@
         <li><a href="services/">Services</a></li>
         <li><a href="about/">About</a></li>
         <li><a href="contact/">Contact</a></li>
+        <li><a href="https://witness.skainet.io/">WITNESS</a></li>
       </ul>
     </nav>
   </div>
@@ -44,34 +45,35 @@
   <button class="vtoggle" type="button" aria-pressed="false">Pause video</button>
   <div class="wrap">
     <div class="hero-text">
-      <p class="kicker">Customized embedded systems</p>
-      <h1>Embedded C++. <span class="red">High-frequency measurement</span> and diagnostics.</h1>
-      <p class="lead">By providing people with machine-generated information, we enable them to make <strong>well-informed decisions</strong>. We build the measurement electronics, the data storage and the analysis for it.</p>
+      <p class="kicker">WITNESS · by skAInet</p>
+      <h1>WITNESS learns how your machines normally run and tells you <span class="red">what deviates</span>.</h1>
+      <p class="lead"><strong>WITNESS</strong> is hardware and software for condition monitoring that runs entirely inside the plant. skAInet is the startup building it, and we are looking for investors to bring it to market.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="mailto:hello@skainet.io">Get in touch</a>
-        <a class="btn btn-ghost" href="services/">Our services</a>
+        <a class="btn btn-primary" href="mailto:hello@skainet.io?subject=Investor%20enquiry">Talk to the founders</a>
+        <a class="btn btn-ghost" href="https://witness.skainet.io/">See WITNESS</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="refs" aria-label="skAInet in numbers">
+<section class="band" aria-labelledby="witness-h">
   <div class="wrap">
-    <div class="grid cols-3 facts">
-      <div class="fact"><b>23+</b><span>Years of experience.</span></div>
-      <div class="fact"><b>110,000+</b><span>Customers.</span></div>
-      <div class="fact"><b>99,000,000+</b><span>Maintenance cost saved.</span></div>
+    <h2 id="witness-h">WITNESS</h2>
+    <div>
+      <p><strong>Every asset deserves a witness.</strong> Modular, on-prem condition monitoring built on standard PoE: measurement devices at the asset, analytics in your own server room, findings labelled by your maintenance staff.</p>
+      <p class="more"><a class="btn btn-ghost" href="https://witness.skainet.io/">Explore WITNESS</a></p>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="cm-h">
+<section class="section" id="idea" aria-labelledby="idea-h">
   <div class="wrap split">
     <div>
-      <h2 class="label" id="cm-h">Condition monitoring for Industry 4.0</h2>
-      <h3 class="title">Upgrade your machines for <span class="red">predictive maintenance</span>.</h3>
-      <p class="intro">We cater to experts in the design and manufacturing of high-end tooling machines, offering customized solutions to upgrade their machines for predictive and preventive maintenance strategies.</p>
-      <p>Our systems are especially suitable for expensive equipment, where the investment in monitoring systems can quickly amortize.</p>
+      <h2 class="label" id="idea-h">The idea behind WITNESS</h2>
+      <h3 class="title">Every movement leaves a <span class="red">fingerprint</span>.</h3>
+      <p class="intro">When a motor moves a railway point, a slide gate or a valve, the power it draws follows a pattern. As the mechanics age, the pattern changes, long before anyone can see or hear it.</p>
+      <p>WITNESS records that pattern at every movement, learns what normal looks like for each single asset and reports what deviates. The maintenance staff, who know the plant best, label the findings, and the models learn from their labels.</p>
+      <p>Maintenance then follows the condition of the machine instead of the calendar.</p>
     </div>
     <figure class="shot dark"><img src="assets/img/condition-monitoring.jpg" width="956" height="536" alt="Diagram: data acquisition feeds data storage and data conditioning, which feed knowledge distribution by dashboard, stack light, mail and phone." loading="lazy"></figure>
   </div>
@@ -79,38 +81,32 @@
 
 <section class="section alt" aria-labelledby="chain-h">
   <div class="wrap">
-    <h2 class="label" id="chain-h">From sensor to decision</h2>
-    <h3 class="title">Four steps, <span class="red">one system</span>.</h3>
+    <h2 class="label" id="chain-h">How WITNESS works</h2>
+    <h3 class="title">Measured, learned and decided <span class="red">inside the plant</span>.</h3>
     <div class="grid cols-2 steps">
       <div class="panel step">
         <span class="num">01</span>
-        <p class="what">Data acquisition</p>
-        <h3>Physical events.</h3>
-        <p>We build analog front-ends for physical sensors such as</p>
-        <ul class="sq"><li>Current, voltage and power</li><li>Infrared cameras</li><li>Ultrasonic vibration measurement</li><li>Flow measurement</li></ul>
+        <p class="what">Measure</p>
+        <h3>One cable per device.</h3>
+        <p>Our measurement devices sit at the asset and record power, temperature or thermal images. A single standard PoE cable carries power and data, which keeps installation simple.</p>
       </div>
       <div class="panel step">
         <span class="num">02</span>
-        <p class="what">Connecting sensors to your grid</p>
-        <h3>Plug and play.</h3>
-        <p>We work with all bus systems commonly used in the industry, such as</p>
-        <ul class="sq"><li>Ethernet and PoE</li><li>CAN and LIN</li><li>1-Wire</li><li>RS232 and RS485</li><li>LoRaWAN and USB</li></ul>
+        <p class="what">Collect</p>
+        <h3>Over the network you already have.</h3>
+        <p>Edge computers on the shop floor power the devices, pre-process the data and pass it on over the normal company Ethernet. Third-party devices with a digital interface connect too.</p>
       </div>
       <div class="panel step">
         <span class="num">03</span>
-        <p class="what">Data storage and data conditioning</p>
-        <h3>AI-powered analysis. Fully integrated.</h3>
-        <p>Our in-house developed archiving systems work hand in hand with our electronics to provide you with a comprehensive monitoring solution. To ensure seamless integration with systems like SAP or manufacturing execution systems, we use openly documented interfaces.</p>
-        <p>Analysis methods we use:</p>
-        <ul class="sq"><li>FFT</li><li>Heat</li><li>DQ transformation and IPSA</li><li>Isolation forest</li><li>Machine learning and AI</li></ul>
+        <p class="what">Learn</p>
+        <h3>No cloud required.</h3>
+        <p>Storage, analytics and model training run on a rack in the customer's own server room. The data stays with the company that owns the machines, and so do the models.</p>
       </div>
       <div class="panel step">
         <span class="num">04</span>
-        <p class="what">User interfaces</p>
-        <h3>Knowledge becomes power.</h3>
-        <p>At the end of the day, no one needs data. People need knowledge to make the best possible decision. Our user interfaces bring the right information to the right place.</p>
-        <p>Some examples of our distribution systems:</p>
-        <ul class="sq"><li>SMS for the maintenance technician</li><li>Dashboard for the plant manager</li><li>Analysis software for the machine operator</li><li>Green light for the stack light</li></ul>
+        <p class="what">Act</p>
+        <h3>Knowledge, not data.</h3>
+        <p>Anomalies, predictions of upcoming maintenance and efficiency estimates are written back to the systems the plant already runs, through openly documented interfaces. No vendor lock-in.</p>
       </div>
     </div>
     <div class="grid cols-3 gallery">
@@ -121,12 +117,58 @@
   </div>
 </section>
 
-<section class="band" aria-labelledby="witness-h">
+<section class="section" aria-labelledby="where-h">
   <div class="wrap">
-    <h2 id="witness-h">WITNESS</h2>
+    <h2 class="label" id="where-h">Where WITNESS applies</h2>
+    <h3 class="title">One WITNESS, <span class="red">many kinds of assets</span>.</h3>
+    <p class="intro">The same devices, the same rack and the same learning loop serve very different industries. What changes is the model.</p>
+    <div class="grid cols-3">
+      <div class="panel">
+        <h3>Rail</h3>
+        <p>Point machines: an early warning before a throw fails, and replacements that can be planned.</p>
+      </div>
+      <div class="panel">
+        <h3>Water</h3>
+        <p>Sluice and slide gates in water, wastewater and hydraulic engineering.</p>
+      </div>
+      <div class="panel">
+        <h3>Process industry</h3>
+        <p>Motorised valves that have to open and close when it counts.</p>
+      </div>
+      <div class="panel">
+        <h3>Process plants</h3>
+        <p>Air-fin coolers: infrared cameras show fouling as heat and tell the operator when to clean.</p>
+      </div>
+      <div class="panel">
+        <h3>Industrial insurers</h3>
+        <p>Continuously measured, physics-based condition data as a basis for risk assessment.</p>
+      </div>
+      <div class="panel">
+        <h3>Your assets</h3>
+        <p>Anything that moves, heats up or draws power in a repeating pattern can be learned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="investors" aria-labelledby="inv-h">
+  <div class="wrap split">
     <div>
-      <p>WITNESS learns how your machines normally run and tells you what deviates, inside your plant. Modular, on-prem condition monitoring built on standard PoE.</p>
-      <p class="more"><a class="btn btn-ghost" href="https://skainet-llc.github.io/witness-landing-page/">See WITNESS</a></p>
+      <h2 class="label" id="inv-h">For investors</h2>
+      <h3 class="title">We are a startup, and we are <span class="red">looking for investment</span>.</h3>
+      <p class="intro">skAInet LLC is a pre-launch startup within the CDL Doha programme. WITNESS builds on what we learned in years of measurement and diagnostics work at Auto-Intern.</p>
+      <p>We develop the measurement hardware, the edge computers, the storage and the analytics ourselves. That is what lets WITNESS run entirely inside a customer's plant, and it is why we need capital: to take the platform from pilot installations to a product that ships.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:hello@skainet.io?subject=Investor%20enquiry">Talk to the founders</a>
+        <a class="btn btn-ghost" href="https://witness.skainet.io/">See WITNESS in detail</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="title">The team</h3>
+      <ul class="sq">
+        <li><strong>Atiyeh Chatrsefid</strong>, CRO</li>
+        <li><strong>Stephan Bökelmann</strong>, CTO</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -142,14 +184,14 @@
       </div>
       <div>
         <img class="logo" src="assets/img/skainet-logo-white.png" width="800" height="214" alt="skAInet" loading="lazy">
-        <p>Development department of Auto-Intern GmbH<br>Herner Str. 299, Gebäude B29<br>44809 Bochum<br>Germany</p>
+        <p>Herner Str. 299, Gebäude B29<br>44809 Bochum<br>Germany</p>
       </div>
       <ul class="links">
         <li><a href="./">Home</a></li>
         <li><a href="services/">Services</a></li>
         <li><a href="about/">About</a></li>
         <li><a href="contact/">Contact</a></li>
-        <li><a href="https://skainet-llc.github.io/witness-landing-page/">WITNESS</a></li>
+        <li><a href="https://witness.skainet.io/">WITNESS</a></li>
       </ul>
     </div>
     <div class="legal">

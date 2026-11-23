@@ -1,7 +1,7 @@
 # skainet-website
 
 Website of skAInet, served with GitHub Pages:
-<https://skainet-llc.github.io/skainet-website/>
+<https://skainet.io/>
 
 Hand-written static HTML in the visual language of the WITNESS landing page
 (Biryani, `#262626` / `#E83B3B`, square shapes). No build step, no tracking, no external requests.
